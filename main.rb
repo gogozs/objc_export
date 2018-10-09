@@ -10,12 +10,12 @@ input_json = JSON.parse(input_file)
 input_dir = File.dirname(input_file_path)
 
 # constants
-OBJC_TYPE_STRING = "NSString*"
-OBJC_TYPE_NUMBER = "NSNumber*"
+OBJC_TYPE_STRING = "NSString *"
+OBJC_TYPE_NUMBER = "NSNumber *"
 OBJC_TYPE_ID = "id"
-OBJC_TYPE_ARRAY = "NSArray*"
+OBJC_TYPE_ARRAY = "NSArray *"
 OBJC_TYPE_BOOL = "BOOL"
-OBJC_TYPE_NULL = "NSNull*"
+OBJC_TYPE_NULL = "NSNull *"
 
 # attributes
 ATTRIBUTE_NONATOMIC = "nonatomic"
@@ -64,7 +64,7 @@ def prop_for_key_value(key, value)
 	type =  $type_map["#{value.class}"]
 	attribute = attr_name_for_attr_array($attr_map[type])
 	var_name = key
-	prop_ret = "#{$prop_declare} (#{attribute}) #{type} #{var_name};"
+	prop_ret = "#{$prop_declare} (#{attribute}) #{type}#{var_name};"
 
 	return prop_ret
 end
